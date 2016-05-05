@@ -28,6 +28,9 @@ public interface IUserInfoDao extends IDao {
     public List<UserInfo> queryForUserByIdnum(String str);
     public List<UserInfo> queryForUserByPhone(String str);
     public List<UserInfo> queryForUserByMail(String str);
+<<<<<<< HEAD
     public int updateOpenid(UserInfo userInfo);
+=======
+>>>>>>> github/master
 
 }

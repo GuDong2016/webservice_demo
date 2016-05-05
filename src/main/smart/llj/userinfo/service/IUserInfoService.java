@@ -25,6 +25,5 @@ public interface IUserInfoService extends IService {
     public String doLogin(LoginRequestBean loginRequestBean);
     public String doRegister(RegisterRequestBean registerRequestBean);
     //public String saveLog(LogInfoRequestBean logInfoRequestBean);
-    public int updateOpenid(UserInfo userInfo);
 
 }
