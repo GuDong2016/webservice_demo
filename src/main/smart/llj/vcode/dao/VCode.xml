@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="main.smart.llj.vcode.dao.IVCodeDao">
+  <!--  <resultMap type="com.smart.sms.user.domain.User" id="userResult">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="createtime" column="createtime"/>
+        <result property="updatetime" column="updatetime"/>
+        <result property="ifuse" column="ifuse"/>
+    </resultMap>
+
+
+    <select id="checkUsernameAndPassword" parameterType="user" resultMap="userResult">
+        SELECT * FROM sms_user WHERE username=#{username} and password=#{password}
+        AND ifuse='y'
+    </select>
+
+    <select id="findUserByUsername" parameterType="user" resultMap="userResult">
+        SELECT * FROM sms_user where username=#{username}
+    </select>
+
+    <insert id="addUser" parameterType="user">
+        INSERT INTO sms_user (id, username, password, createtime, updatetime, ifuse) VALUES
+        (#{id},#{username},#{password},#{createtime},#{updatetime},#{ifuse})
+    </insert>
+
+    <select id="queryForUserByName" parameterType="user" resultType="user">
+        SELECT t.* FROM sms_user t where t.username=#{username}
+    </select>
+
+    <update id="updatePassword" parameterType="user">
+        UPDATE  sms_user SET password=#{password} WHERE id=#{id}
+    </update>-->
+    <!--<select id="findAll" parameterType="userinfo" resultType="userinfo">
+        SELECT * FROM t_userinfo;
+    </select>-->
+
+    <insert id="saveVCode" parameterType="vcode" >
+       INSERT INTO smrz.t_vcode (id, idnum, vcode, mvcode, createtime, ifuse) VALUES
+       (#{id}, #{idnum}, #{vcode}, #{mvcode}, #{createtime}, #{ifuse})
+    </insert>
+
+   <!-- <select id="queryForUserByIdnum" parameterType="java.lang.String" resultType="userinfo">
+        select t.* from smrz.t_userinfo t WHERE t.idnum = #{str}
+            </select>
+    <select id="queryForUserByPhone" parameterType="java.lang.String" resultType="userinfo">
+        select t.* from smrz.t_userinfo t WHERE t.phone = #{str}
+    </select>
+    <select id="queryForUserByMail" parameterType="java.lang.String" resultType="userinfo">
+        select t.* from smrz.t_userinfo t WHERE t.mail = #{str}
+    </select>-->
+</mapper>

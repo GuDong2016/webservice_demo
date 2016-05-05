@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 别名 -->
+    <typeAliases>
+        <typeAlias type="main.smart.llj.userinfo.domain.UserInfo" alias="userinfo"/>
+        <typeAlias type="main.smart.llj.loginfo.domain.LogInfo" alias="loginfo"/>
+        <typeAlias type="main.smart.llj.vcode.domain.VCode" alias="vcode"/>
+    </typeAliases>
+
+    <mappers>
+        <mapper resource="main/smart/llj/userinfo/dao/UserInfo.xml"/>
+        <mapper resource="main/smart/llj/loginfo/dao/LogInfo.xml"/>
+        <mapper resource="main/smart/llj/vcode/dao/VCode.xml"/>
+    </mappers>
+
+</configuration>
