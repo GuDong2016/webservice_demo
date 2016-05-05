@@ -39,8 +39,8 @@
     </select>
 
     <insert id="saveUser" parameterType="userinfo" >
-        INSERT  INTO smrz.t_userinfo (id, createtime, updatetime, ifuse, phone, mail, realname, password, phonetype, idnum) VALUES
-        (#{id}, #{createtime}, #{updatetime}, #{ifuse}, #{phone}, #{mail}, #{realname}, #{password}, #{phonetype}, #{idnum})
+        INSERT  INTO smrz.t_userinfo (id, createtime, updatetime, ifuse, phone, mail, realname, password, phonetype, idnum, openid) VALUES
+        (#{id}, #{createtime}, #{updatetime}, #{ifuse}, #{phone}, #{mail}, #{realname}, #{password}, #{phonetype}, #{idnum}, #{openid})
     </insert>
 
     <select id="queryForUserByIdnum" parameterType="java.lang.String" resultType="userinfo">
@@ -52,4 +52,8 @@
     <select id="queryForUserByMail" parameterType="java.lang.String" resultType="userinfo">
         select t.* from smrz.t_userinfo t WHERE t.mail = #{str}
     </select>
+    <update id="updateOpenid" parameterType="userinfo">
+        UPDATE smrz.t_userinfo SET openid=#{openid} WHERE
+        idnum=#{idnum}
+    </update>
 </mapper>

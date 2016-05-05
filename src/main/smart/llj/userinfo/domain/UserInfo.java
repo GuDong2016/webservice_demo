@@ -25,6 +25,7 @@ public class UserInfo extends BaseModel {
     private String idnum;
     private String password;
     private String phonetype;
+    private String openid;
 
     public String getPhone() {
         return phone;
@@ -72,5 +73,13 @@ public class UserInfo extends BaseModel {
 
     public void setPhonetype(String phonetype) {
         this.phonetype = phonetype;
+    }
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid;
     }
 }

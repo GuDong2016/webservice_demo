@@ -242,4 +242,9 @@ public class UserInfoServiceImpl implements IUserInfoService {
             return "0001";
         }
     }*/
+
+    @Override
+    public int updateOpenid(UserInfo userInfo) {
+        return this.userInfoDao.updateOpenid(userInfo);
+    }
 }
