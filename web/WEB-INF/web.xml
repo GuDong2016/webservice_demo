@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml
+            classpath:spring-config.xml
+        </param-value>
+    </context-param>
+
+
+    <!-- Start WebService Config -->
+    <servlet>
+        <servlet-name>JAXWSServlet</servlet-name>
+        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSSpringServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JAXWSServlet</servlet-name>
+        <url-pattern>/service/smrz</url-pattern>
+    </servlet-mapping>
+    <!-- End WebService Config -->
+
+
+    <!--<servlet>　　　
+        <servlet-name>springmvc</servlet-name>
+        　　
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        　　<load-on-startup>1</load-on-startup>　
+    </servlet>
+    <servlet-mapping>
+        　
+        <servlet-name>springmvc</servlet-name>
+        　
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>-->
+    <servlet>
+        <servlet-name>restserices</servlet-name>
+        <servlet-class>
+            com.sun.jersey.spi.spring.container.servlet.SpringServlet
+        </servlet-class>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>main.smart.llj</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>restserices</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
